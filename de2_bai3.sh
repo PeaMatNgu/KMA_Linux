@@ -1,15 +1,15 @@
+  GNU nano 7.2                                             bai3.sh                                                      
 #!/bin/bash
-lsblk
-mkfs.ext4 /dev/sdb
-mkdir -p /THI1_HK
-mkdir -p /THI2_HK
-mount /dev/sdb /THI1_HK
-echo "test thoi 123" > /THI1_HK/ok.txt
-rsync -av /THI1_HK/ok.txt /THI2_HK
-echo "KetquaTHI2"
-ls -l /THI2_HK/
-mkdir -p /THI21
-cp /etc/passwd /THI1_HK/
-umount /dev/sdb
-echo "Ketqua THI1"
-ls -l /THI1_HK/
+useradd -m U3
+useradd -m U4
+echo "U3:123" | chpasswd
+echo "U4:123" | chpasswd
+usermod -aG root U3
+usermod -aG root U4
+mkdir /home/KMA2
+echo "------"
+cp -r /home/KMA2 /home/U3
+echo "-------"
+su - U3 -c "rm -rf /home/KMA2"
+ls -l /home/
+
