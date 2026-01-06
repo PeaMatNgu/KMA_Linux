@@ -12,7 +12,7 @@ ip addr show lo
 
 echo -e "\n--- 3. Kiem tra thong mang toi may vat ly ---"
 # Ping 3 gói tin để không bị treo script
-ping -c 3 192.168.0.1
+ping -c 3 localhost
 
 echo -e "\n--- 4. Thay doi thanh IP moi: 192.168.1.200/30 ---"
 # Bước quan trọng: Xóa sạch các IP cũ trên card ens33 trước khi đặt IP mới
