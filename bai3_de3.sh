@@ -1,8 +1,9 @@
 #!/bin/bash
-sudo lsblk
-sudo mkdir -p /KMA/Security
-sudo mkdir /THI
-sudo mount /dev/sr0 /KMA/Security
+lsblk
+mkdir -p /KMA/Security
+mkdir -p /THI
+mount /dev/sr1 /KMA/Security
 ls /KMA/Security
-sudo cp /KMA/Security/md5sum.txt  /THI/
-ls /THI
+cp /KMA/Security/md5sum.txt /THI
+ls -l /THI
+
