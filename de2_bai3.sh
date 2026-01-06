@@ -1,13 +1,15 @@
 #!/bin/bash
-sudo useradd -m U3
-sudo useradd -m U4
- echo "U3:u3_1234" | sudo chpasswd
- echo "U4:u4_4567" | sudo chpasswd
-sudo usermod -aG root U3
-sudo usermod -aG root U4
-sudo mkdir /KMA2
-sudo cp -r /KMA2 /home/U3/
-echo "Dang thuc hien xoa KMA2 o U3"
-sudo su - U3 -c "rm -rf /KMA2"
-echo "Ket qua kiem tra ton tai /KMA2"
-ls -d /KMA2
+lsblk
+mkfs.ext4 /dev/sdb
+mkdir -p /THI1_HK
+mkdir -p /THI2_HK
+mount /dev/sdb /THI1_HK
+echo "test thoi 123" > /THI1_HK/ok.txt
+rsync -av /THI1_HK/ok.txt /THI2_HK
+echo "KetquaTHI2"
+ls -l /THI2_HK/
+mkdir -p /THI21
+cp /etc/passwd /THI1_HK/
+umount /dev/sdb
+echo "Ketqua THI1"
+ls -l /THI1_HK/
