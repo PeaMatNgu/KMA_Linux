@@ -1,12 +1,12 @@
 #!/bin/bash
+rm /KMA/Baitap/vanban2.txt
 mkdir -p /KMA/Baitap
-echo "check thoi" > /KMA/Baitap/vanban2.txt
-ls -l /KMA/Baitap/vanban2.txt
-chmod 744 /KMA/Baitap/vanban2.txt
-ls -l /KMA/Baitap/vanban2.txt
+echo "Vu ngu vcl" > /KMA/Baitap/vanban2.txt
+ls -l /KMA/Baitap
+chmod 774 /KMA/Baitap/vanban2.txt
+ls -l /KMA/Baitap
 useradd -m U25
 echo "U25:sv123" | chpasswd
-chmod 747 /KMA/Baitap
+chown U25:U25 /KMA/Baitap
 su - U25 -c "mv /KMA/Baitap/vanban2.txt /KMA/Baitap/soanthao.txt"
-ls -l /KMA/Baitap
-ip addr
+ip addr show
