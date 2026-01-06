@@ -1,12 +1,12 @@
-#!/bin/bash
-sudo lsblk
-sudo mkfs.ext2 /dev/sdc
-sudo mkdir -p /THI/THUCHANH
-sudo mount /dev/sdc /THI/THUCHANH
-echo "Day la file test" | sudo tee /ktbai2_de4.txt
-sudo cp /ktbai2_de4.txt /THI/THUCHANH
-sudo umount /THI/THUCHANH
-sudo mount -o ro /dev/sdc /THI/THUCHANH
-ls /THI/THUCHANH
-echo "Dang thu xoa file de kiem tra tinh nang bao ve:"
-sudo rm /THI/THUCHANH/ktbai2_de4.txt
+!/bin/bash
+lscpu | head -n 10
+mkfs.ext2 /dev/sdb
+mkdir -p /home/THI/THUCHANH
+mount /dev/sdb /home/THI/THUCHANH
+cp /etc/passwd /home/THI/THUCHANH/
+echo "Huy bo gan ket"
+umount /dev/sdb
+mount -o ro /dev/sdb /home/THI/THUCHANH
+echo "xoa thu file"
+rm -r /home/THI/THUCHANH/passwd
+ls -l /home/THI/THUCHANH
